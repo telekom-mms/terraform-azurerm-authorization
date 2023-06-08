@@ -1,4 +1,4 @@
-variable "tpl_local_name" {
+variable "role_assignment" {
   type        = any
   default     = {}
   description = "Resource definition, default settings are defined within locals and merged with var settings. For more information look at [Outputs](#Outputs)."
@@ -6,27 +6,31 @@ variable "tpl_local_name" {
 
 locals {
   default = {
-    tpl_local_name = {
-      name = ""
-      tags = {}
+    // resource definition
+    role_assignment = {
+      name                                   = ""
+      role_definition_id                     = null
+      role_definition_name                   = null
+      condition                              = null
+      condition_version                      = null
+      delegated_managed_identity_resource_id = null
+      description                            = null
+      skip_service_principal_aad_check       = null
+      tags                                   = {}
     }
   }
 
-  /**
-    compare and merge custom and default values
-  */
-  tpl_local_name_values = {
-    for tpl_local_name in keys(var.tpl_local_name) :
-    tpl_local_name => merge(local.default.tpl_local_name, var.tpl_local_name[tpl_local_name])
+  // compare and merge custom and default values
+  role_assignment_values = {
+    for role_assignment in keys(var.role_assignment) :
+    role_assignment => merge(local.default.role_assignment, var.role_assignment[role_assignment])
   }
 
-  /**
-    deep merge of all custom and default values
-  */
-  tpl_local_name = {
-    for tpl_local_name in keys(var.tpl_local_name) :
-    tpl_local_name => merge(
-      local.tpl_local_name_values[tpl_local_name],
+  // deep merge of all custom and default values
+  role_assignment = {
+    for role_assignment in keys(var.role_assignment) :
+    role_assignment => merge(
+      local.role_assignment_values[role_assignment],
       {}
     )
   }
