@@ -9,7 +9,7 @@
 resource "azurerm_role_assignment" "role_assignment" {
   for_each = var.role_assignment
 
-  name                                   = local.role_assignment[each.key].name == "" ? each.key : local.role_assignment[each.key].name
+  name                                   = local.role_assignment[each.key].name
   scope                                  = local.role_assignment[each.key].scope
   role_definition_id                     = local.role_assignment[each.key].role_definition_id
   role_definition_name                   = local.role_assignment[each.key].role_definition_name
@@ -19,5 +19,4 @@ resource "azurerm_role_assignment" "role_assignment" {
   delegated_managed_identity_resource_id = local.role_assignment[each.key].delegated_managed_identity_resource_id
   description                            = local.role_assignment[each.key].description
   skip_service_principal_aad_check       = local.role_assignment[each.key].skip_service_principal_aad_check
-  tags                                   = local.role_assignment[each.key].tags
 }

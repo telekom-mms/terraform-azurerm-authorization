@@ -8,7 +8,7 @@ locals {
   default = {
     // resource definition
     role_assignment = {
-      name                                   = ""
+      name                                   = null
       role_definition_id                     = null
       role_definition_name                   = null
       condition                              = null
@@ -16,7 +16,6 @@ locals {
       delegated_managed_identity_resource_id = null
       description                            = null
       skip_service_principal_aad_check       = null
-      tags                                   = {}
     }
   }
 
