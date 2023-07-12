@@ -1,9 +1,9 @@
-output "tpl_local_name" {
+output "role_assignments" {
   description = "Outputs all attributes of resource_type."
   value = {
-    for tpl_local_name in keys(tpl_resource_type.tpl_local_name) :
-    tpl_local_name => {
-      for key, value in tpl_resource_type.tpl_local_name[tpl_local_name] :
+    for role_assignment in keys(azurerm_role_assignment.role_assignment) :
+    role_assignment => {
+      for key, value in azurerm_role_assignment.role_assignment[role_assignment] :
       key => value
     }
   }
@@ -17,9 +17,9 @@ output "variables" {
       variable => local.default[variable]
     }
     merged = {
-      tpl_local_name = {
-        for key in keys(var.tpl_local_name) :
-        key => local.tpl_local_name[key]
+      role_assignment = {
+        for key in keys(var.role_assignment) :
+        key => local.role_assignment[key]
       }
     }
   }

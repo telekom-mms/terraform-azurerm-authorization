@@ -1,15 +1,22 @@
 /**
-* # tpl_module
+* # authorization
 *
-* This module manages the tpl_provider tpl_module resources.
-* For more information see https://registry.terraform.io/providers/tpl_provider/latest/docs > tpl_module
+* This module manages the azurerm authorization resources.
+* For more information see https://registry.terraform.io/providers/azurerm/latest/docs > authorization
 *
 */
 
-resource "tpl_resource_type" "tpl_local_name" {
-  for_each = var.tpl_local_name
+resource "azurerm_role_assignment" "role_assignment" {
+  for_each = var.role_assignment
 
-  name = local.tpl_local_name[each.key].name == "" ? each.key : local.tpl_local_name[each.key].name
-
-  tags = local.tpl_local_name[each.key].tags
+  name                                   = local.role_assignment[each.key].name
+  scope                                  = local.role_assignment[each.key].scope
+  role_definition_id                     = local.role_assignment[each.key].role_definition_id
+  role_definition_name                   = local.role_assignment[each.key].role_definition_name
+  principal_id                           = local.role_assignment[each.key].principal_id
+  condition                              = local.role_assignment[each.key].condition
+  condition_version                      = local.role_assignment[each.key].condition_version
+  delegated_managed_identity_resource_id = local.role_assignment[each.key].delegated_managed_identity_resource_id
+  description                            = local.role_assignment[each.key].description
+  skip_service_principal_aad_check       = local.role_assignment[each.key].skip_service_principal_aad_check
 }
