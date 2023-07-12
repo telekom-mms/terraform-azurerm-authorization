@@ -1,4 +1,4 @@
-output "role_assignment" {
+output "role_assignments" {
   description = "Outputs all attributes of resource_type."
   value = {
     for role_assignment in keys(azurerm_role_assignment.role_assignment) :
