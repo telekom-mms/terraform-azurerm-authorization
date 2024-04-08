@@ -9,6 +9,17 @@ output "role_assignments" {
   }
 }
 
+output "pim_eligible_role_assignment" {
+  description = "Outputs all attributes of resource_type."
+  value = {
+    for pim_eligible_role_assignment in keys(azurerm_pim_eligible_role_assignment.pim_eligible_role_assignment) :
+    pim_eligible_role_assignment => {
+      for key, value in azurerm_pim_eligible_role_assignment.pim_eligible_role_assignment[pim_eligible_role_assignment] :
+      key => value
+    }
+  }
+}
+
 output "variables" {
   description = "Displays all configurable variables passed by the module. __default__ = predefined values per module. __merged__ = result of merging the default values and custom values passed to the module"
   value = {
@@ -20,6 +31,10 @@ output "variables" {
       role_assignment = {
         for key in keys(var.role_assignment) :
         key => local.role_assignment[key]
+      }
+      pim_eligible_role_assignment = {
+        for key in keys(var.pim_eligible_role_assignment) :
+        key => local.pim_eligible_role_assignment[key]
       }
     }
   }

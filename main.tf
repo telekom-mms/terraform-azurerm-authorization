@@ -20,3 +20,30 @@ resource "azurerm_role_assignment" "role_assignment" {
   description                            = local.role_assignment[each.key].description
   skip_service_principal_aad_check       = local.role_assignment[each.key].skip_service_principal_aad_check
 }
+
+resource "azurerm_pim_eligible_role_assignment" "pim_eligible_role_assignment" {
+  for_each = var.pim_eligible_role_assignment
+
+  principal_id       = each.value.principal_id
+  role_definition_id = each.value.role_definition_id
+  scope              = each.value.scope
+
+  dynamic "schedule" {
+    for_each = length(compact(concat([for key in
+    setsubtract(keys(local.pim_eligible_role_assignment[each.key].schedule), ["expiration"]) : local.pim_eligible_role_assignment[each.key].schedule[key]], values(local.pim_eligible_role_assignment[each.key].schedule["expiration"])))) > 0 ? [0] : []
+
+    content {
+      start_date_time = local.pim_eligible_role_assignment[each.key].schedule.start_date_time
+
+      dynamic "expiration" {
+        for_each = length(compact(values(local.pim_eligible_role_assignment[each.key].schedule.expiration))) > 0 ? [0] : []
+
+        content {
+          duration_days  = local.pim_eligible_role_assignment[each.key].schedule.expiration.duration_days
+          duration_hours = local.pim_eligible_role_assignment[each.key].schedule.expiration.duration_hours
+          end_date_time  = local.pim_eligible_role_assignment[each.key].schedule.expiration.end_date_time
+        }
+      }
+    }
+  }
+}
