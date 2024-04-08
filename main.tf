@@ -29,3 +29,30 @@ resource "azurerm_user_assigned_identity" "user_assigned_identity" {
   resource_group_name = local.user_assigned_identity[each.key].resource_group_name
   tags                = local.user_assigned_identity[each.key].tags
 }
+
+resource "azurerm_pim_eligible_role_assignment" "pim_eligible_role_assignment" {
+  for_each = var.pim_eligible_role_assignment
+
+  principal_id       = local.pim_eligible_role_assignment[each.key].principal_id
+  role_definition_id = local.pim_eligible_role_assignment[each.key].role_definition_id
+  scope              = local.pim_eligible_role_assignment[each.key].scope
+
+  dynamic "schedule" {
+    for_each = length(compact(concat([for key in
+    setsubtract(keys(local.pim_eligible_role_assignment[each.key].schedule), ["expiration"]) : local.pim_eligible_role_assignment[each.key].schedule[key]], values(local.pim_eligible_role_assignment[each.key].schedule["expiration"])))) > 0 ? [0] : []
+
+    content {
+      start_date_time = local.pim_eligible_role_assignment[each.key].schedule.start_date_time
+
+      dynamic "expiration" {
+        for_each = length(compact(values(local.pim_eligible_role_assignment[each.key].schedule.expiration))) > 0 ? [0] : []
+
+        content {
+          duration_days  = local.pim_eligible_role_assignment[each.key].schedule.expiration.duration_days
+          duration_hours = local.pim_eligible_role_assignment[each.key].schedule.expiration.duration_hours
+          end_date_time  = local.pim_eligible_role_assignment[each.key].schedule.expiration.end_date_time
+        }
+      }
+    }
+  }
+}
