@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.1](https://github.com/telekom-mms/terraform-azurerm-authorization/tree/1.0.1) (2024-08-28)
+
+[Full Changelog](https://github.com/telekom-mms/terraform-azurerm-authorization/compare/1.0.0...1.0.1)
+
+**Implemented enhancements:**
+
+- pin max version [\#11](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/11) ([michaelamattes](https://github.com/michaelamattes))
+
+**Merged pull requests:**
+
+- run terrascan in test setting directory [\#5](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/5) ([michaelamattes](https://github.com/michaelamattes))
+- define excludes for tflint workflow [\#4](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/4) ([michaelamattes](https://github.com/michaelamattes))
+
 ## [1.0.0](https://github.com/telekom-mms/terraform-azurerm-authorization/tree/1.0.0) (2023-07-12)
 
 [Full Changelog](https://github.com/telekom-mms/terraform-azurerm-authorization/compare/2d39e83c77c47b2532dd59c16f99c570320c1471...1.0.0)
