@@ -20,3 +20,12 @@ resource "azurerm_role_assignment" "role_assignment" {
   description                            = local.role_assignment[each.key].description
   skip_service_principal_aad_check       = local.role_assignment[each.key].skip_service_principal_aad_check
 }
+
+resource "azurerm_user_assigned_identity" "user_assigned_identity" {
+  for_each = var.user_assigned_identity
+
+  name                = local.user_assigned_identity[each.key].name == "" ? each.key : local.user_assigned_identity[each.key].name
+  location            = local.user_assigned_identity[each.key].location
+  resource_group_name = local.user_assigned_identity[each.key].resource_group_name
+  tags                = local.user_assigned_identity[each.key].tags
+}
