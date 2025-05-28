@@ -31,7 +31,7 @@ resource "azurerm_user_assigned_identity" "user_assigned_identity" {
 }
 
 resource "azurerm_pim_eligible_role_assignment" "pim_eligible_role_assignment" {
-  for_each = var.pim_eligible_role_assignment
+  for_each = local.pim_eligible_role_assignment
 
   principal_id       = local.pim_eligible_role_assignment[each.key].principal_id
   role_definition_id = local.pim_eligible_role_assignment[each.key].role_definition_id
