@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.3](https://github.com/telekom-mms/terraform-azurerm-authorization/tree/1.0.3) (2025-08-28)
+
+[Full Changelog](https://github.com/telekom-mms/terraform-azurerm-authorization/compare/1.0.2...1.0.3)
+
+**Fixed bugs:**
+
+- fix terrascan workflow run [\#13](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/13) ([michaelamattes](https://github.com/michaelamattes))
+
 ## [1.0.2](https://github.com/telekom-mms/terraform-azurerm-authorization/tree/1.0.2) (2024-10-09)
 
 [Full Changelog](https://github.com/telekom-mms/terraform-azurerm-authorization/compare/1.0.1...1.0.2)
