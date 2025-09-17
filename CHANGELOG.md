@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.4](https://github.com/telekom-mms/terraform-azurerm-authorization/tree/1.0.4) (2025-09-17)
+
+[Full Changelog](https://github.com/telekom-mms/terraform-azurerm-authorization/compare/1.0.3...1.0.4)
+
+**Implemented enhancements:**
+
+- New resource azurerm\_pim\_eligible\_assignment [\#8](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/8) ([habr-mms](https://github.com/habr-mms))
+
 ## [1.0.3](https://github.com/telekom-mms/terraform-azurerm-authorization/tree/1.0.3) (2025-08-28)
 
 [Full Changelog](https://github.com/telekom-mms/terraform-azurerm-authorization/compare/1.0.2...1.0.3)
