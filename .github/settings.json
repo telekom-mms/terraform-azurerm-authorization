@@ -4,9 +4,11 @@
     "visibility": "public",
     "default_branch": "main",
     "topics": [
-      "terraform",
       "azure",
-      "role-assignment"
+      "pim-eligible-role-assignment",
+      "role-assignment",
+      "terraform",
+      "user-assigned-identity"
     ]
   }
 }
