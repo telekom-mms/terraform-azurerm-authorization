@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.1](https://github.com/telekom-mms/terraform-azurerm-authorization/tree/2.0.1) (2026-03-30)
+
+[Full Changelog](https://github.com/telekom-mms/terraform-azurerm-authorization/compare/2.0.0...2.0.1)
+
+**Merged pull requests:**
+
+- chore\(config\): standardize renovate.json and update repository topics [\#16](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/16) ([mikaEz](https://github.com/mikaEz))
+
 ## [2.0.0](https://github.com/telekom-mms/terraform-azurerm-authorization/tree/2.0.0) (2025-10-27)
 
 [Full Changelog](https://github.com/telekom-mms/terraform-azurerm-authorization/compare/1.0.3...2.0.0)
@@ -10,7 +18,7 @@
 
 **Merged pull requests:**
 
-- Upgrade azurerm version to 4 [\#15](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/15) ([michaelamattes](https://github.com/michaelamattes))
+- Upgrade azurerm version to 4 [\#15](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/15) ([mikaEz](https://github.com/mikaEz))
 
 ## [1.0.3](https://github.com/telekom-mms/terraform-azurerm-authorization/tree/1.0.3) (2025-08-28)
 
@@ -18,7 +26,7 @@
 
 **Fixed bugs:**
 
-- fix terrascan workflow run [\#13](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/13) ([michaelamattes](https://github.com/michaelamattes))
+- fix terrascan workflow run [\#13](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/13) ([mikaEz](https://github.com/mikaEz))
 
 ## [1.0.2](https://github.com/telekom-mms/terraform-azurerm-authorization/tree/1.0.2) (2024-10-09)
 
@@ -34,12 +42,12 @@
 
 **Implemented enhancements:**
 
-- pin max version [\#11](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/11) ([michaelamattes](https://github.com/michaelamattes))
+- pin max version [\#11](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/11) ([mikaEz](https://github.com/mikaEz))
 
 **Merged pull requests:**
 
-- run terrascan in test setting directory [\#5](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/5) ([michaelamattes](https://github.com/michaelamattes))
-- define excludes for tflint workflow [\#4](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/4) ([michaelamattes](https://github.com/michaelamattes))
+- run terrascan in test setting directory [\#5](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/5) ([mikaEz](https://github.com/mikaEz))
+- define excludes for tflint workflow [\#4](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/4) ([mikaEz](https://github.com/mikaEz))
 
 ## [1.0.0](https://github.com/telekom-mms/terraform-azurerm-authorization/tree/1.0.0) (2023-07-12)
 
@@ -47,7 +55,7 @@
 
 **Merged pull requests:**
 
-- Refactoring [\#1](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/1) ([michaelamattes](https://github.com/michaelamattes))
+- Refactoring [\#1](https://github.com/telekom-mms/terraform-azurerm-authorization/pull/1) ([mikaEz](https://github.com/mikaEz))
 
 
 
